@@ -1,0 +1,20 @@
+.information-title,.information-textarea{
+    min-height:1.2rem;
+    width:100%;
+    background-color:#fff;
+    padding-left:0.3rem;
+    color:#333;
+    font-size:16px;
+}
+.information-btn{
+    width:92%;
+    height:0.9rem;
+    background-color:#f893b4;
+    margin-top:0.9rem;
+    border-radius:5px;
+    color:#fff;
+}
+.information-textarea{
+    padding-top:0.2rem;
+    border:none;
+}
