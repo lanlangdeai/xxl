@@ -14,11 +14,11 @@
             <img src="../assets/collect.jpg" class="cd-img">
             <p class="cd-text">正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p>
         </div>
-        <div class="cd-footer" @click="addComment">
+        <div class="cd-footer" @click="popupVisible = true">
             <i class="iconfont icon-comment-pen"></i>
             <label>点击输入你的评论</label>
         </div>
-        <mt-popup v-model="popupVisible" position="bottom" class="cd-bottom">
+        <van-popup v-model:show="popupVisible" position="bottom" class="cd-bottom">
             <div>
                 <span>请告诉他（她）</span>
             </div>
@@ -26,28 +26,18 @@
             <div>
                 <button type="button" class="cd-publish">发表</button>
             </div>
-        </mt-popup>
+        </van-popup>
     </div>
 </template>
 
-<script>
-    import { Popup } from 'mint-ui';
-    export default {
-        data() {
-            return {
-                popupVisible: false
-            }
-        },
-        methods: {
-            addComment() {
-                this.popupVisible = true
-            }
-        },
-        created() {
-            document.title = "我的故事的文章标题"
-        }
-    }
+<script setup>
+import { ref, onMounted } from 'vue'
 
+const popupVisible = ref(false)
+
+onMounted(() => {
+    document.title = "我的故事的文章标题"
+})
 </script>
 
 <style>
@@ -58,7 +48,7 @@
         font-size: 16px;
         color: #333;
     }
-    
+
     .cd-title {
         height: 0.8rem;
         background-color: #fff;
@@ -67,30 +57,29 @@
         align-items: center;
         padding: 0 0.2rem;
     }
-    
+
     .cd-title-name {
         font-size: 16px;
         font-weight: bold;
         color: #333;
     }
-    
+
     .cd-title-time {
         height: 0.8rem;
         display: flex;
         align-items: center;
     }
-    
+
     .cd-icon {
         margin-right: 0.2rem;
         color: #cdcdcd;
     }
-    
+
     .cd-title-time span {
         font-size: 14px;
         color: #cdcdcd;
     }
-    /*正文*/
-    
+
     .cd-content {
         padding: 0.2rem;
         background-color: #fff;
@@ -98,19 +87,19 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cd-text {
         color: #333;
         font-size: 14px;
         text-align: left;
     }
-    
+
     .cd-img {
         width: 100%;
         height: 4rem;
         margin: 0.2rem 0;
     }
-    
+
     .cd-footer {
         width: 100%;
         height: 0.88rem;
@@ -123,18 +112,18 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .cd-footer>label {
         color: #666;
         font-size: 16px;
     }
-    
+
     .cd-footer>i {
         font-size: 0.5rem;
         margin-right: 0.2rem;
         color: #666;
     }
-    
+
     .cd-bottom {
         width: 100%;
         min-height: 2.4rem;
@@ -145,24 +134,23 @@
         align-items: center;
         font-size: 15px;
     }
-    
+
     .cd-bottom textarea {
         resize: none;
         width: 90%;
         height: 1.2rem;
         margin: 0.2rem;
     }
-    
+
     .cd-bottom>div {
         width: 90%;
         display: flex;
-        display: -webkit-box;
     }
-    
+
     .cd-bottom>div:last-child {
         justify-content: flex-end;
     }
-    
+
     .cd-publish {
         width: auto;
         height: auto;

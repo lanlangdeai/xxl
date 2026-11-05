@@ -13,18 +13,12 @@
     </div>
 </template>
 
-<script>
-    export default {
-        data() {
-            return {
+<script setup>
+import { onMounted } from 'vue'
 
-            }
-        },
-        created() {
-            document.title = "更改密码"
-        }
-    }
-
+onMounted(() => {
+    document.title = "更改密码"
+})
 </script>
 
 <style>
@@ -33,12 +27,12 @@
         height: 100%;
         background-color: #f1f1f1;
     }
-    
+
     .change-form {
         width: 100%;
         padding-top: 0.2rem;
     }
-    
+
     .change-form li {
         width: 100%;
         background-color: #fff;
@@ -46,7 +40,7 @@
         flex-direction: column;
         margin-bottom: 0.2rem;
     }
-    
+
     .change-form input {
         height: 1rem;
         border-radius: 0;
@@ -55,18 +49,18 @@
         line-height: 1rem;
         font-size: 16px;
     }
-    
+
     .change-form input::-webkit-input-placeholder {
         color: #aaa;
         font-size: 16px;
     }
-    
+
     .change-form button {
         width: 92%;
         height: 1rem;
         background-color: #f893b4;
         color: #fff;
         font-size: 16px;
-        border-radius:5px;
+        border-radius: 5px;
     }
 </style>

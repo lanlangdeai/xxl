@@ -4,7 +4,7 @@
       <ul class="login-box">
         <li>
           <i class="iconfont icon-user"></i>
-          <input type="text" placeholder="请输入用户名" maxlength="11"/>
+          <input type="text" placeholder="请输入用户名" maxlength="11" />
         </li>
         <li>
           <i class="iconfont icon-password"></i>
@@ -28,27 +28,14 @@
 
 <style src="../css/index.css" />
 
-<script>
-  import { Indicator } from 'mint-ui';
-  export default {
-    data() {
-      return {
-        ShowLoading: false
-      }
-    },
-    methods: {
-      login() {
-        // Indicator.open({
-        //   text: '加载中...',
-        //   spinnerType: 'fading-circle'
-        // });
+<script setup>
+import { onMounted } from 'vue'
 
-        Indicator.close();
-      }
-    },
-    created() {
-      document.title = "登录"
-    }
-  }
+function login() {
+  // 登录逻辑（待接入后端）
+}
 
+onMounted(() => {
+  document.title = "登录"
+})
 </script>

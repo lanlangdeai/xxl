@@ -1,24 +1,17 @@
 <template>
     <div class="homePage-container">
-        <appFooter :active="1"></appFooter>
+        <app-footer :active="1"></app-footer>
     </div>
 </template>
 
-<script>
-    import appFooter from '../modules/Footer.vue'
-    export default {
-        components:{'appFooter':appFooter},
-        data() {
-            return {
+<script setup>
+import { onMounted } from 'vue'
+import AppFooter from '../modules/Footer.vue'
 
-            }
-        },
-        created() {
-            document.title = "添加回忆"
-        }
-    }
+onMounted(() => {
+    document.title = "添加回忆"
+})
 </script>
 
 <style>
-
 </style>

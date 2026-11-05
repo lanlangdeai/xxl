@@ -17,20 +17,19 @@
     </div>
 </template>
 
-<script>
-    export default {
-        created() {
-            document.title = "收藏的文章标题"
-        }
-    }
+<script setup>
+import { onMounted } from 'vue'
 
+onMounted(() => {
+    document.title = "收藏的文章标题"
+})
 </script>
 
 <style>
     .cd-container {
         padding-top: 0.2rem;
     }
-    
+
     .cd-title {
         height: 0.8rem;
         background-color: #fff;
@@ -39,42 +38,46 @@
         align-items: center;
         padding: 0 0.2rem;
     }
-    
+
     .cd-title-name {
         font-size: 16px;
         font-weight: bold;
         color: #333;
     }
-    
+
     .cd-title-time {
         height: 0.8rem;
         display: flex;
         align-items: center;
     }
-    .cd-icon{
-        margin-right:0.2rem;
-        color:#cdcdcd;
+
+    .cd-icon {
+        margin-right: 0.2rem;
+        color: #cdcdcd;
     }
+
     .cd-title-time span {
         font-size: 14px;
         color: #cdcdcd;
     }
-    /*正文*/
-    .cd-content{
-        padding:0.2rem;
-        background-color:#fff;
-        display:flex;
+
+    .cd-content {
+        padding: 0.2rem;
+        background-color: #fff;
+        display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
     }
-    .cd-text{
-        color:#333;
-        font-size:14px;
-        text-align:left;
+
+    .cd-text {
+        color: #333;
+        font-size: 14px;
+        text-align: left;
     }
-    .cd-img{
-        width:100%;
-        height:4rem;
-        margin:0.2rem 0;
+
+    .cd-img {
+        width: 100%;
+        height: 4rem;
+        margin: 0.2rem 0;
     }
 </style>

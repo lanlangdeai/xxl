@@ -1,7 +1,7 @@
 <template>
     <div class="collect-container">
         <ul class="collect-content">
-            <li v-for="item in collectData">
+            <li v-for="(item, index) in collectData" :key="index">
                 <img src="../assets/collect.jpg" class="collect-img">
                 <div class="collect-content-details">
                     <p>
@@ -13,31 +13,26 @@
                 </div>
             </li>
         </ul>
-        <appFooter :active="2"></appFooter>
+        <app-footer :active="2"></app-footer>
     </div>
 </template>
 
-<script>
-    import appFooter from '../modules/Footer.vue'
-    export default {
-        components: { 'appFooter': appFooter },
-        data() {
-            return {
-                collectData: [
-                    { time: '2017-03-08' },
-                    { time: '2017-03-08' },
-                    { time: '2017-03-08' },
-                    { time: '2017-03-08' },
-                    { time: '2017-03-08' },
-                    { time: '2017-03-08' }
-                ]
-            }
-        },
-        created() {
-            document.title = "收藏"
-        }
-    }
+<script setup>
+import { ref, onMounted } from 'vue'
+import AppFooter from '../modules/Footer.vue'
 
+const collectData = ref([
+    { time: '2017-03-08' },
+    { time: '2017-03-08' },
+    { time: '2017-03-08' },
+    { time: '2017-03-08' },
+    { time: '2017-03-08' },
+    { time: '2017-03-08' }
+])
+
+onMounted(() => {
+    document.title = "收藏"
+})
 </script>
 
 <style>
@@ -45,7 +40,7 @@
         padding-top: 0.2rem;
         padding-bottom: 1rem;
     }
-    
+
     .collect-content li {
         padding: 0.2rem;
         background-color: #fff;
@@ -54,42 +49,41 @@
         align-items: center;
         margin-bottom: 0.2rem;
     }
-    
+
     .collect-img {
-        /*width: 3rem;*/
         height: 2rem;
         margin-right: 0.2rem;
     }
-    
+
     .collect-content-details {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
-    
+
     .collect-time {
         font-size: 14px;
         color: #dcdcdc;
     }
-    
+
     .collect-text {
         color: #333;
         font-size: 12px;
         display: flex;
         text-align: left;
     }
-    
+
     .collect-content-details p {
         width: 100%;
         display: flex;
         justify-content: flex-end;
     }
-    
+
     .collect-icon {
         margin-right: 0.1rem;
         color: #aaa;
     }
-    
+
     .collect-btn {
         width: 1.6rem;
         height: 0.55rem;

@@ -36,16 +36,10 @@
 
 <style src="../css/index.css" />
 
-<script>
-    export default {
-        data() {
-            return {
+<script setup>
+import { onMounted } from 'vue'
 
-            }
-        },
-        created() {
-            document.title = "注册"
-        }
-    }
-
+onMounted(() => {
+    document.title = "注册"
+})
 </script>

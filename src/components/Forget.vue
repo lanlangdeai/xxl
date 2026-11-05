@@ -1,9 +1,6 @@
 <template>
     <div class="container">
         <div class="wrapper">
-            <!--<p class="login-title-text">
-                    <span>密码忘记了？木有关系，重新设置一下</span>
-                </p>-->
             <ul class="login-box">
                 <li>
                     <i class="iconfont icon-user"></i>
@@ -37,16 +34,10 @@
 
 <style src="../css/index.css" />
 
-<script>
-    export default {
-        data() {
-            return {
+<script setup>
+import { onMounted } from 'vue'
 
-            }
-        },
-        created() {
-            document.title = "忘记密码"
-        }
-    }
-
+onMounted(() => {
+    document.title = "忘记密码"
+})
 </script>
